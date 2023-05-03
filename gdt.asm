@@ -12,7 +12,7 @@ gdt_null: 		; null descriptor (mandatory)
 gdt_code:			; code segment descriptor
 	dw 0xffff		; limit (bits 0-15)
 	dw 0x0			; base (bits 0-15)
-	dw 0x0			; base (bits 16-23)
+	db 0x0			; base (bits 16-23)
 	db 10011010b 	; 1st flag, type flag
 	db 11001111b	; 2nd flag, limit (bits 16-19)
 	db 0x0			; base (bits 24-31)
@@ -21,7 +21,7 @@ gdt_code:			; code segment descriptor
 gdt_data:			; code segment descriptor
 	dw 0xffff		; limit (bits 0-15)
 	dw 0x0			; base (bits 0-15)
-	dw 0x0			; base (bits 16-23)
+	db 0x0			; base (bits 16-23)
 	db 10010010b 	; 1st flag, type flag
 	db 11001111b	; 2nd flag, limit (bits 16-19)
 	db 0x0			; base (bits 24-31)

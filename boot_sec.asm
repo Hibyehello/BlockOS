@@ -48,7 +48,7 @@ BEGIN_32:
 
 	call KERNEL_OFFSET
 	
-	jmp end
+	jmp $
 
 newline:
 	db 0xD, 0xA, 0
@@ -57,7 +57,7 @@ boot_string:
 	db "Booting up BlockOS...", 0xD, 0xA, 0
 
 pm_switch_string:
-	db "Switched to 32 bit mode", 0xD, 0xA, 0
+	db "Switched to 32 bit mode", 0
 
 load_kernel_string:
 	db "Loadeding Hib Kernel", 0xD, 0xA, 0
@@ -66,8 +66,6 @@ goodbye_string:
 	db "Shutting Down BlockOS...", 0
 
 BOOT_DRIVE: db 0
-
-end:
 
 times 510-($-$$) db 0
 
